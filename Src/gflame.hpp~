@@ -1,0 +1,22 @@
+#ifndef _gflame_hpp_
+#define _gflame_hpp_
+
+#include <AMReX_MultiFab.H>
+
+namespace Gflame{
+    //
+    // variables 
+    //
+    static int max_grid_size = 16;
+    static amrex::Vector<int> ncells, bc_lo, bc_hi;
+    static amrex::Vector<amrex::Real> prob_lo, prob_hi;
+
+    inline amrex::DistributionMapping dm;
+    inline amrex::BoxArray ba;
+    
+    //
+    // functions
+    //
+    void init();
+}
+#endif
