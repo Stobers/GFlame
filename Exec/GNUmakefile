@@ -3,7 +3,7 @@ AMREX_HOME = ../Submodules/amrex
 ## --- Compiler Options --- ##
 DEBUG        = FALSE
 COMP         = gnu
-USE_OMP      = FALSE
+USE_OMP      = TRUE
 USE_MPI      = TRUE
 ##########################
 

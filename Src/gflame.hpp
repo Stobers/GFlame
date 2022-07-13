@@ -4,6 +4,8 @@
 #include <AMReX_MultiFab.H>
 #include <AMReX_BCRec.H>
 
+#define Pi 3.1415926535897932384626433
+
 namespace Gflame{
     //
     // variables 
@@ -20,6 +22,8 @@ namespace Gflame{
     static amrex::Geometry geom;
     static const unsigned int feild_ncomp = 2;
     static const unsigned int feild_ngrow = 0;
+    static amrex::Real flameloc = 0.5;
+    static amrex::Real flamepert = 0;
    
     //
     // functions
