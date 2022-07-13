@@ -30,6 +30,6 @@ namespace Gflame{
     //
     void init();
     void set_bc();
-    void init_prob();
+    void init_gfeild();
 }
 #endif

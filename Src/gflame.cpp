@@ -43,7 +43,7 @@ namespace Gflame{
 	dx = geom.CellSizeArray();
 
 	set_bc();
-	init_prob();
+	init_gfeild();
     }
 
 
@@ -69,9 +69,9 @@ namespace Gflame{
     }
 
 
-    void init_prob()
-     {
-	 using namespace amrex;
+    void init_gfeild()
+    {
+	using namespace amrex;
 #ifdef AMREX_USE_OMP
 #pragma omp parallel
 #endif
@@ -122,5 +122,5 @@ namespace Gflame{
 		    gnew(i,j,k) = g(i,j,k);
 		});
 	}
-     }
+    }
 }
