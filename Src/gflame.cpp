@@ -97,10 +97,12 @@ namespace Gflame{
 			 0.945 * std::sin(2 * Pi * 3 * (x - 0.00712435) / Lx) +
 			 1.017 * std::sin(2 * Pi * 5 * (x - 0.0033) / Lx) +
 			 0.982 * std::sin(2 * Pi * 5 * (x - 0.014234) / Lx)) / (1 + 1.023 + 0.945 + 1.017 + 0.982);
-		    if (y - dx[1] + pert > loc || y + dx[1] + pert < loc)
-			g(i,j,k) = (1 / Ly) * (y + pert - loc);
+		    if (y - dx[1] + pert > loc)
+		      g(i,j,k) = 1;
+		    else if (y + dx[1] + pert < loc)
+		      g(i,j,k) = -1;
 		    else
-			g(i,j,k) = 0;
+		      g(i,j,k) = 0;
 #elif (BL_SPACEDIM == 3)
 		    Real Lz_perc = Lz / 100;
 		    Real loc = flameloc * Lz_perc;
